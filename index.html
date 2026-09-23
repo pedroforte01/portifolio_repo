@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Forte | Jiu-Jitsu</title>
+
+    <!-- FONTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Staatliches&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8598V9ZZZ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-J8598V9ZZZ');
+    </script>
+
+</head>
+<body>
+
+    <!-- BARRA DE TOPO FIXA -->
+   
+        <!--<div class="barra-topo">
+        <div class="barra-conteudo">-->
+            <!-- INÍCIO -->
+            <!--<a href="/" class="inicio">I N Í C I O</a> -->
+            
+            <!-- ÁREA DIREITA -->
+            <!-- <div class="info-direita"> -->
+                <!-- Instagram 
+                <a href="https://www.instagram.com/_pedrofortejj/" class="icone-social-IG" target="_blank" rel="noopener noreferrer">
+                    <img src="img/ig.logo2.svg" alt="Instagram" class="icone-rede-ig">
+                </a>
+                -->
+
+                <!-- WhatsApp 
+                <a href="https://wa.me/message/RE4LPELRA5E5P1" class="icone-social-WPP" target="_blank" rel="noopener noreferrer">
+                    <img src="img/wpp.logo.svg" alt="WhatsApp" class="icone-rede-wpp">
+                </a> 
+                -->
+
+                <!-- Google Maps 
+                <a href="https://maps.app.goo.gl/tSh2iLx5nYDnKUxX8" class="icone-social-Gmaps" target="_blank" rel="noopener noreferrer">
+                    <img src="img/gmaps.logo.svg" alt="Google Maps" class="icone-rede-gmaps">
+                </a> 
+                -->
+                
+
+            </div>
+        </div>
+    </div>
+ 
+
+    <!-- SEÇÃO SUPERIOR (FUNDO 1) -->
+    <section class="secao-superior">
+        <h1>Pedro Forte</h1>
+
+        <div class="seta-scroll" id="scroll-down">
+            <img src="img/seta-baixo.svg" alt="Descer">
+        </div>
+
+    </section>
+
+    <!-- SEÇÃO INFERIOR (FUNDO 2) -->
+    <section class="secao-inferior">
+        <div class="particulas"></div>
+        <div class="conteudo-inferior">
+            <h2>Campanha Competitiva 2026</h2>
+            <div class="area-campanha">
+
+                <div class="eventos">
+                    <h3 class="titulo-caixa">Eventos Participados</h3> <ul class="lista-eventos"></ul>
+                </div>
+
+                <div class="grafico">
+                    <h3 class="titulo-caixa">Aproveitamento</h3> 
+                    <div class="donut" id="donut-chart">
+                        <div class="donut-center">
+                            <span id="porcentagem-vitoria">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="legenda-grafico">
+
+                        <div class="legenda-item">
+                            <span class="cor vitoria"></span>
+                            <p>Vitórias</p>
+                        </div>
+
+                        <div class="legenda-item">
+                            <span class="cor derrota"></span>
+                            <p>Derrotas</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <h3 class="titulo-caixa">Estatisticas</h3> <div class="estatisticas">
+
+                    <div class="stat">
+                        <h3 id="total-lutas">0</h3>
+                        <p>Lutas</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="total-vitorias">0</h3>
+                        <p>Vitórias</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="total-derrotas">0</h3>
+                        <p>Derrotas</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="taxa-vitoria">0%</h3>
+                        <p>Taxa de vitória</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="taxa-finalizacao">0%</h3>
+                        <p>Taxa de finalização</p>
+                    </div>
+
+                    <div class="stat">
+                        <h3 id="tempo-medio">0:00</h3>
+                        <p>Tempo médio</p>
+                    </div>
+
+                </div>
+    
+                <div class="area-medalhas" style="width: 100%;">
+                    
+                    <h3 class="titulo-caixa">Conquistas</h3>
+                    
+                    <div class="medalhas" style="margin-top: 20px;">
+                        <div class="medalha">
+                            <h3 id="total-ouro">0</h3>
+                            <p>Ouro 🥇</p>
+                        </div>
+                        <div class="medalha">
+                            <h3 id="total-prata">0</h3>
+                            <p>Prata 🥈</p>
+                        </div>
+                        <div class="medalha">
+                            <h3 id="total-bronze">0</h3>
+                            <p>Bronze 🥉</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+        <div class="seta-scroll seta-proxima" id="scroll-to-bio">
+            <img src="img/seta-baixo.svg" alt="Ir para Biografia">
+        </div>
+
+    </section>
+
+<section class="secao-bio" id="biografia">
+    <div class="conteudo-bio">
+        <h2 class="titulo-caixa" style="margin-bottom: 50px;">Minha Trajetória</h2>
+        
+        <div class="roadmap">
+            
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2018 - 2021</span>
+                            <h3>A Descoberta e o Resgate</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>Tudo começou no final de 2018, em um projeto social em Maracanaú/CE. A energia do tatame era viciante. Em 2020, com a pandemia, enfrentei o isolamento e um quadro de depressão. Mas o retorno às atividades em 2021 provou o poder do esporte: o Jiu-Jitsu me salvou. Deixei para trás a insegurança e comecei a forjar a mente de um competidor nos meus primeiros eventos na faixa branca.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2022</span>
+                            <h3>A Virada de Chave</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>O trabalho duro deu frutos. De bicicleta, pedalando quase 10km até o CT e conciliando com o trabalho CLT, conquistei meu primeiro pódio: um vice-campeonato no Nordeste Brasileiro da FJJCE que teve gosto de ouro. Em junho, veio o primeiro ouro. Em julho, a sonhada Faixa Azul. E em agosto, estreei na nova graduação sendo campeão do Bad Boy Classic International. Foi também o ano em que conheci a Sport Mais e iniciei uma grande parceria com o professor Tony Silva.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2023</span>
+                            <h3>Ganhando o Mundo</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>Um ano de muita evolução e de cruzar fronteiras. Conheci a Hope Jiu-Jitsu, minha atual equipe, sob a tutela dos professores Mario Souza e Nazareno Ferreira. Na raça, vendendo rifas e trabalhando duro, saí do estado para lutar o Sul-Americano em SP e o AJP Natal no RN. Eu estava me preparando para o que achava que seria o meu "ano de ouro".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2024</span>
+                            <h3>A Maior Provação</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>Em janeiro, às vésperas do AJP Tour Ceará, um acidente de moto me tirou dos tatames. Ao retornar, o maior baque da minha carreira: o rompimento do LCA. Foram 6 meses de espera pela cirurgia e mais 6 meses de uma recuperação árdua. Um ano inteiro longe daquilo que eu mais amava fazer. Foi a luta mais difícil, mas eu não desisti.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2025</span>
+                            <h3>O Retorno Triunfal</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>Voltei aos tatames com uma alegria indescritível. Após quase dois anos sem competir, me sagrei campeão do interno da Sport Mais. Em seguida, campeão do Bad Boy Classic pós-lesão e vice-campeão do Fortaleza Open NO-GI, provando que a resiliência supera qualquer adversidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marco-item">
+                <div class="marco-ponto"></div>
+                <div class="marco-card">
+                    <div class="marco-header">
+                        <div class="marco-titulos">
+                            <span class="marco-ano">2026</span>
+                            <h3>A Consagração no AJP</h3>
+                        </div>
+                        <span class="seta-bio">▼</span>
+                    </div>
+                    <div class="marco-body">
+                        <p>A glória chegou no meu primeiro grande evento internacional em casa: Campeão do AJP Tour Brazil, entregando uma performance de alto nível. Hoje, sigo em constante evolução na faixa azul, me preparando para os próximos desafios no tatame e conciliando com a vida profissional fora dele. A jornada está só começando.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+</section>
+
+<footer class="rodape">
+    <div class="rodape-conteudo">
+        <div class="rodape-logo">
+            <h2>PEDRO <span>FORTE</span></h2>
+            <p>Atleta de Jiu-Jitsu | Desenvolvedor Front-end</p>
+        </div>
+
+        <div class="rodape-links">
+            <h3>Contato</h3>
+            
+            <a href="https://www.instagram.com/_pedrofortejj/" target="_blank" class="btn-contato ig">
+                <img src="img/ig.logo.svg" alt="Instagram"> Instagram
+            </a>
+            
+            <!-- <a href="https://wa.me/message/RE4LPELRA5E5P1" target="_blank" class="btn-contato wpp">
+                <img src="img/wpp.logo.svg" alt="WhatsApp"> WhatsApp 
+            </a> -->
+
+            <a href="https://www.linkedin.com/in/pedro-forte-b0308a229" target="_blank" class="btn-contato in">
+                <img src="img/linkedin.logo.svg" alt="LinkedIn"> LinkedIn
+            </a>
+
+            <!-- <a href="mailto:pedror03289@gmail.com?subject=Contato%20Site" target="_blank" class="btn-contato mail">
+                <img src="img/gmail.logo.svg" alt="E-mail"> pedror03289@gmail.com 
+            </a> -->
+
+            <a href="https://maps.app.goo.gl/tSh2iLx5nYDnKUxX8" class="btn-contato Gmaps" target="_blank" rel="noopener noreferrer">
+                    <img src="img/gmaps.logo.svg" alt="Google Maps" class="icone-rede-gmaps"> Google Maps
+            </a>
+
+        </div>
+    </div>
+
+    <div class="rodape-fundo">
+        <p>&copy; 2026 Pedro Forte. Design e Desenvolvimento de minha autoria. 💻🥋</p>
+        <a href="#" class="voltar-topo">▲ Voltar ao Topo</a>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

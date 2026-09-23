@@ -1,0 +1,935 @@
+/* ========================================
+   RESET BÁSICO
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILO DO CORPO */
+body {
+    font-family: "Staatliches", sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   BARRA DO TOPO
+======================================== */
+
+/*.barra-topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.barra-conteudo {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.info-direita {
+    display: flex;
+    gap: 20px;
+}
+
+/* Ícones */
+/*.icone-social-IG,
+/*.icone-social-WPP,*/
+/*.icone-social-Gmaps {
+    display: flex;
+    align-items: center;
+    transition: opacity .2s;
+}*/
+
+
+/*.icone-social-IG:hover,
+/*.icone-social-WPP:hover,*/
+/*.icone-social-Gmaps:hover {
+    opacity: .7;
+}
+
+.icone-rede-ig { width: 28px; height: 28px; }
+/*.icone-rede-wpp { width: 18px; height: 18px; }*/
+/*.icone-rede-gmaps { width: 20px; height: 20px; }*/
+
+
+/* ========================================
+   HERO (TELA INICIAL) - COM MERGULHO
+======================================== */
+.secao-superior {
+    min-height: 100vh;
+    /* GRADIENTE: Termina preto colando na seção inferior */
+    background: 
+        linear-gradient(
+            to bottom, 
+            #000000 0%,         
+            transparent 15%,    
+            transparent 85%,   
+            #000000 100%      
+        ),
+        url("img/bg_sup.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center; 
+}
+
+.secao-superior::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+
+.secao-superior h1 {
+    color: #fff;
+    font-family: "Staatliches", cursive;
+    font-weight: 400;
+    font-size: 5rem;
+    letter-spacing: 30px;
+    margin-left: 100px;
+    position: relative;
+    z-index: 2;
+    text-align: center; 
+    transform: translateY(-190px);
+
+    background: linear-gradient(
+        120deg,
+        #fff 0%,
+        #fff 45%,
+        #7fd1ff 50%,
+        #fff 55%,
+        #fff 100%
+    );
+
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: luzTitulo 6s linear infinite;
+    z-index: 2;
+}
+
+@keyframes luzTitulo {
+    0% { background-position: -200% }
+    100% { background-position: 200% }
+}
+
+/* ========================================
+   SETAS DE SCROLL (Unificadas e Corrigidas)
+======================================== */
+.seta-scroll {
+    position: absolute;
+    bottom: 30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: flutuarSeta 1.8s infinite;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.seta-scroll:hover {
+    opacity: 1;
+}
+
+.seta-scroll img {
+    width: 35px; 
+    filter: brightness(0) invert(1);
+}
+
+@keyframes flutuarSeta {
+    0% { transform: translate(-50%,0) }
+    50% { transform: translate(-50%,10px) }
+    100% { transform: translate(-50%,0) }
+}
+
+/* ========================================
+   SEGUNDA TELA (ÁREA INFERIOR) - COM MERGULHO
+======================================== */
+.secao-inferior {
+    min-height: 100vh;
+    /* GRADIENTE SANDUÍCHE: Começa preto e termina preto */
+    background: 
+        linear-gradient(to bottom, 
+            #000000 0%, 
+            rgba(0,0,0,0.3) 15%, 
+            rgba(0,0,0,0.3) 85%, 
+            #000000 100%
+        ),
+        url('img/bg_inf.jpeg');
+    background-size: cover;
+    background-position: center top; /* Garante que esconde a marca d'água */
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 120px; 
+}
+
+.secao-inferior::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+
+/* PARTÍCULAS FLUTUANTES */
+.particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+.particulas span {
+    position: absolute;
+    bottom: -20px;
+    width: 6px;
+    height: 6px;
+    background: #7fd1ff; 
+    border-radius: 50%;
+    box-shadow: 0 0 10px #7fd1ff;
+    animation: subirParticulas linear infinite;
+}
+
+@keyframes subirParticulas {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-1000px) scale(0); }
+}
+
+.conteudo-inferior {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.conteudo-inferior h2 {
+    font-size: 4.5rem;
+    letter-spacing: 18px;
+}
+
+/* ========================================
+   CAMPANHA (PAINEL PRINCIPAL)
+======================================== */
+.area-campanha {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 60px;
+    flex-wrap: wrap;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.08);
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+.area-campanha.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.titulo-caixa {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #ffffff; 
+    margin-bottom: 25px;
+    border-bottom: 1px dashed rgba(127, 209, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+/* EVENTOS */
+.eventos {
+    flex: 1;
+    min-width: 260px;
+    padding-right: 30px;
+    border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.lista-eventos {
+    list-style: none;
+}
+
+.lista-eventos li {
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,.04);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+/* GRAFICO */
+.grafico {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 30px;
+    border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.legenda-grafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.cor {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.vitoria { background: #2ecc71; }
+.derrota { background: #e74c3c; }
+
+/* DONUT */
+.donut {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(127,209,255,.15);
+}
+
+.donut-center {
+    width: 160px;
+    height: 160px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* ESTATISTICAS */
+.estatisticas {
+    flex: 1;
+    min-width: 260px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding-left: 30px;
+}
+
+.stat {
+    background: rgba(255,255,255,.04);
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.06);
+    text-align: center;
+    transition: 0.25s;
+}
+
+.stat:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.06);
+}
+
+.stat h3 {
+    font-size: 2rem;
+}
+
+/* ========================================
+   MEDALHAS
+======================================== */
+.medalhas {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 40px auto 0 auto;
+}
+
+.medalha {
+    background: rgba(255,255,255,.04);
+    padding: 18px 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.06);
+    text-align: center;
+    transition: .25s;
+}
+
+.medalha:hover {
+    transform: translateY(-3px);
+}
+
+.medalha h3 {
+    font-size: 2rem;
+}
+
+.medalha p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ========================================
+   LISTA DE EVENTOS (INTERATIVA)
+======================================== */
+.lista-eventos { list-style: none; }
+
+.evento-item {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 15px;
+    overflow: hidden; 
+    transition: background 0.3s;
+}
+
+.evento-item:hover { background: rgba(255, 255, 255, 0.08); }
+
+.evento-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    cursor: pointer; 
+}
+
+.evento-titulo {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.seta-toggle {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: transform 0.3s ease; 
+}
+
+.evento-body {
+    padding: 0 20px; 
+    max-height: 0; 
+    opacity: 0; 
+    transition: all 0.4s ease-out; 
+}
+
+.evento-body p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    padding-top: 15px; 
+}
+
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background: rgba(127, 209, 255, 0.1); 
+    border: 1px solid rgba(127, 209, 255, 0.3);
+    border-radius: 6px;
+    color: #7fd1ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.instagram-link:hover {
+    background: rgba(127, 209, 255, 0.2);
+    transform: translateY(-2px); 
+}
+
+.icone-ig-link {
+    width: 18px;
+    height: 18px;
+}
+
+/* ESTADOS QUANDO A GAVETA ESTÁ ABERTA */
+.evento-item.aberta { border-color: rgba(127, 209, 255, 0.4); }
+
+.evento-item.aberta .evento-body {
+    max-height: 250px; 
+    opacity: 1; 
+    padding-bottom: 20px; 
+}
+
+.evento-item.aberta .seta-toggle {
+    transform: rotate(180deg);
+    opacity: 1;
+    color: #7fd1ff;
+}
+
+/* ========================================
+   SEÇÃO BIOGRAFIA (ROADMAP IMERSIVO)
+======================================== */
+.secao-bio {
+    min-height: 100vh;
+    position: relative;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    
+    /* GRADIENTE SANDUÍCHE DA BIO - Um pouco mais escuro (0.7) pro P&B brilhar sutilmente */
+    background: 
+        linear-gradient(to bottom, 
+            #000000 0%, 
+            rgba(0,0,0,0.7) 15%, 
+            rgba(0,0,0,0.7) 85%, 
+            #000000 100%
+        ),
+        url('img/bio.jpg'); /* <-- NÃO ESQUEÇA DE USAR SUA FOTO P&B AQUI */
+    background-size: cover;
+    background-position: center;
+}
+
+.conteudo-bio {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+/* A Linha Vertical do Roadmap */
+.roadmap {
+    position: relative;
+    padding-left: 50px; 
+}
+
+.roadmap::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #7fd1ff, rgba(127, 209, 255, 0.1));
+    box-shadow: 0 0 15px rgba(127, 209, 255, 0.4);
+}
+
+.marco-item {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.marco-ponto {
+    position: absolute;
+    left: -37px; 
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    background: #7fd1ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #7fd1ff;
+    z-index: 3;
+}
+
+.marco-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.marco-card:hover {
+    background: rgba(127, 209, 255, 0.05);
+    border-color: rgba(127, 209, 255, 0.3);
+    transform: translateX(10px);
+}
+
+.marco-ano {
+    color: #7fd1ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.marco-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.marco-card p {
+    opacity: 0.7;
+    font-family: sans-serif; 
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   SANFONA DA BIOGRAFIA
+======================================== */
+.marco-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Mãozinha de clique */
+}
+
+.marco-titulos h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0; /* Tiramos a margem pra não ficar muito solto */
+    letter-spacing: 2px;
+}
+
+.seta-bio {
+    font-size: 1rem;
+    color: #7fd1ff;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
+
+/* O Segredo da Gaveta Escondida */
+.marco-body {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.marco-body p {
+    opacity: 0.8;
+    font-family: sans-serif; 
+    font-size: 0.95rem;
+    margin-top: 15px; /* Dá um respiro quando a gaveta abre */
+    padding-top: 15px;
+    border-top: 1px dashed rgba(127, 209, 255, 0.2); /* Linha sutil separando título do texto */
+}
+
+/* Estado Aberto (Quando o JS coloca a classe 'aberta') */
+.marco-card.aberta .marco-body {
+max-height: 600px; /* Aumentamos o limite para o texto respirar no celular */
+opacity: 1;
+}
+
+.marco-card.aberta .seta-bio {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.marco-card.aberta {
+    border-color: rgba(127, 209, 255, 0.4);
+    background: rgba(127, 209, 255, 0.05);
+}
+
+@media (max-width: 600px) {
+    .marco-card {
+        padding: 15px; /* Diminuímos um pouco o padding interno pra sobrar mais espaço pro texto */
+    }
+    .marco-card p {
+        font-size: 0.9rem; /* Texto levemente menor no celular ajuda na leitura */
+        line-height: 1.5;
+    }
+}
+
+/* ========================================
+   RODAPÉ (FOOTER)
+======================================== */
+.rodape {
+    background-color: #000000; 
+    padding: 80px 20px 20px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha sutil separando da Bio */
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.rodape-logo h2 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.rodape-logo span {
+    color: #7fd1ff;
+}
+
+.rodape-logo p {
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.5;
+    margin-top: 5px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rodape-links h3 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #7fd1ff;
+    margin-bottom: 5px;
+}
+
+.btn-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.7;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.btn-contato img {
+
+    width: 24px;
+    height: 24px; 
+    object-fit: contain; 
+    filter: none; 
+    margin-right: 10px; 
+}
+
+.btn-contato:hover {
+    opacity: 1;
+    color: #7fd1ff;
+    transform: translateX(5px); /* Efeito de seta apontando pra frente */
+}
+
+.rodape-fundo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+.voltar-topo {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.voltar-topo:hover {
+    color: #7fd1ff;
+}
+
+
+/* Responsivo do Rodapé (Mobile) */
+@media (max-width: 600px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .btn-contato:hover { 
+        transform: translateY(-3px); /* No mobile, o botão pula pra cima ao invés do lado */
+    }
+    .rodape-fundo {
+        flex-direction: column-reverse; /* Coloca os direitos autorais embaixo do botão de voltar */
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 1024px) {
+    .secao-superior h1 {
+        font-size: 4rem;
+        letter-spacing: 20px;
+        margin-left: 0;
+        text-align: center;
+        transform: translateY(-150px);
+    }
+
+    .conteudo-inferior h2 {
+        font-size: 3rem;
+        letter-spacing: 10px;
+        text-align: center;
+    }
+    .area-campanha {
+        gap: 30px; 
+        padding: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .secao-superior h1 {
+        font-size: 3.5rem;
+        letter-spacing: 15px;
+        margin-left: 0;
+        text-align: center;
+        transform: translateY(-120px);
+    }
+    .area-campanha {
+        flex-direction: column;
+        padding: 30px;
+        gap: 40px; 
+    }
+    .eventos,
+    .grafico,
+    .estatisticas {
+        border-right: none; 
+        padding: 0; 
+        min-width: 100%; 
+        width: 100%;
+    }
+    .eventos,
+    .grafico {
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        padding-bottom: 30px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .roadmap { padding-left: 35px; }
+    .roadmap::before { left: 10px; }
+    .marco-ponto { left: -31px; }
+    .marco-card h3 { font-size: 1.4rem; }
+}
+
+@media (max-width: 500px) {
+    .secao-superior {
+        /* APLICANDO O MERGULHO NO MOBILE TAMBÉM */
+        background: 
+        linear-gradient(
+            to bottom, 
+            #000000 0%,         
+            transparent 15%,    
+            transparent 85%,   
+            #000000 100%      
+        ),
+        url("img/bg_sup_mobile.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .secao-superior h1 {
+        margin: 0;
+        position: relative;
+        top: -10px; 
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+        transform: translateY(0);
+    }
+
+    .secao-inferior {
+        /* APLICANDO O MERGULHO NO MOBILE TAMBÉM */
+        background: 
+            linear-gradient(to bottom, 
+                #000000 0%, 
+                rgba(0,0,0,0.3) 15%, 
+                rgba(0,0,0,0.3) 85%, 
+                #000000 100%
+            ),
+            url('img/bg_inf_mobile.jpg'); 
+        background-size: cover;
+        background-position: center top;
+        background-attachment: scroll; 
+    }
+
+    .conteudo-inferior { padding: 40px 15px; }
+    .conteudo-inferior h2 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    .area-campanha { padding: 20px 10px; }
+    .estatisticas { grid-template-columns: 1fr; }
+    
+    .donut { width: 180px; height: 180px; }
+    .donut-center { width: 110px; height: 110px; }
+    
+    .medalhas {
+        gap: 10px;
+        flex-wrap: wrap; 
+    }
+    .medalha { padding: 12px 14px; }
+    .medalha h3 { font-size: 1.5rem; }
+}
