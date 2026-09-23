@@ -12,9 +12,9 @@ if(inicioBtn){
 /*-------LISTAGEM DE LUTAS E DADOS DOS CAMPEONATOS-------*/
 const lutas = [
     {
-        evento: "AJP TOUR Fortaleza",
+        evento: "AJP TOUR Fortaleza - GI",
         resultado: 1,
-        medalha: "🥇",
+        medalha: " CAT 🥇",
         lutas: 4,
         vitorias: 4,
         derrotas: 0,
@@ -44,6 +44,39 @@ const lutas = [
         tempoTotal: 310,
         linkIg: "https://www.instagram.com/p/DZ5777cJTgx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     }
+    ,{
+        evento: "fortaleza winter 2026 - GI",
+        resultado: 2,
+        medalha: " CAT 🥈",
+        lutas: 4,
+        vitorias: 3,
+        derrotas: 1,
+        finalizacoes: 1,
+        tempoTotal: 720,
+        linkIg: "https://www.instagram.com/p/DcZMoygiUfV/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    }
+    ,{
+        evento: "Maraca e-xtreme 2026 - GI",
+        resultado: 1,
+        medalha: " CAT 🥇",
+        lutas: 2,
+        vitorias: 2,
+        derrotas: 0,
+        finalizacoes: 2,
+        tempoTotal: 200,
+        linkIg: "https://www.instagram.com/p/DaT4TeMF4ua/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    }
+    ,{
+        evento: "Tatame da Vida 2026 - GI",
+        resultado: 1,
+        medalha: " CAT 🥇",
+        lutas: 2,
+        vitorias: 2,
+        derrotas: 0,
+        finalizacoes: 2,
+        tempoTotal: 200,
+        linkIg: "https://www.instagram.com/p/DblFFIIDosf/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    }    
 ];
 
 let totalLutas = 0;
